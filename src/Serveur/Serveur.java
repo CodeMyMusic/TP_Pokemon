@@ -2,6 +2,7 @@ package Serveur;
 
 import java.io.*;
 import java.net.*;
+import java.util.List;
 
 public class Serveur {
 	private static int nbMaxJoueurs = 2;
@@ -18,7 +19,13 @@ public class Serveur {
             while (nbJoueurs < nbMaxJoueurs) {
                 Socket socket = serverSocket.accept();
                 System.out.println("Nouveau joueur");
-                new Joueur(socket).start();
+
+                // Désérialiser la liste des Pokémon du joueur
+                ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+                List<Pokemon> listePokemons = (List<Pokemon>) in.readObject();
+
+                // Lancer un thread pour gérer les actions du joueur
+                new JoueurThread(socket, listePokemons).start();
                 nbJoueurs++;
             }
  

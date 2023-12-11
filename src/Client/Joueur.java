@@ -16,6 +16,6 @@ public class Joueur {
     
     public void combattre() {
     	Combat combat = new Combat();
-    	Client 
+    	
     }
 }
