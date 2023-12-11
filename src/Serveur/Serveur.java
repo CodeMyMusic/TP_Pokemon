@@ -3,7 +3,7 @@ package Serveur;
 import java.io.*;
 import java.net.*;
 
-public class Arène {
+public class Serveur {
 	private static int nbMaxJoueurs = 2;
 	private static int nbJoueurs = 0;
     public static void main(String[] args) {

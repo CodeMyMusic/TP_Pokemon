@@ -13,4 +13,9 @@ public class Joueur {
     public void chooseRandomPokemon() {
     	
     }
+    
+    public void combattre() {
+    	Combat combat = new Combat();
+    	Client 
+    }
 }

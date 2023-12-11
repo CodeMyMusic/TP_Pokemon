@@ -12,7 +12,7 @@ public class Joueur extends Thread {
     private Socket socket;
     private static Random rand = new Random(); 
     
-    private String nom;
+    private String pseudo;
     
 
     public Joueur(Socket socket) {
