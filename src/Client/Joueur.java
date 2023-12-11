@@ -38,8 +38,8 @@ public class Joueur {
         this.pseudo = pseudo;
     }
     
-    public void chooseRandomPokemon() {
-    	
+    public Pokemon chooseRandomPokemon() {
+    	return AllPokemons.lootbox();
     }
     
     public void combattre() {

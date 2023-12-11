@@ -10,6 +10,7 @@ import java.util.List;
 public class JoueurThread extends Thread {
     private Socket socket;
     private List<Pokemon> listePokemons;
+    
 
     public JoueurThread(Socket socket, List<Pokemon> listePokemons) {
         this.socket = socket;

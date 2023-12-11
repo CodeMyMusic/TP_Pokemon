@@ -9,6 +9,7 @@ import java.util.Scanner;
 import Serveur.Joueur;
 
 public class Combat {
+	private Joueur j;
 	private final static int maxPokemons = 6;
 	private static ArrayList<Pokemon> listePokemons = new ArrayList<Pokemon>();
 	private Pokemon currentPokemon;
@@ -17,16 +18,17 @@ public class Combat {
 	}
 	
     public static void main(String[] args) {
-    	while (listePokemons.size()<maxPokemons) {
+    	boolean outOfRange = false;
+    	while (listePokemons.size() < maxPokemons) {
     		addPokemon();
     	}
     	System.out.println("Vous avez séléctionné 6 pokemons, vous êtes prêt pour affronter un autre joueur en ligne !");
-    	
     }
     
-	public static void chooseCurrentPokemon() {
+    public static void choosePokemon(ArrayList<Pokemon> list) {
 		boolean valid = false;
 		int pokeNum;
+		Pokemon p;
 		Scanner scan = new Scanner(System.in);
 		while (!valid) {
 			System.out.println("Choisisez un pokemon (numéro)");
@@ -41,16 +43,28 @@ public class Combat {
 				ex.printStackTrace();
 			}
 		}
+		Pokemon p =  
 		scan.close();
-	    Pokemon currentPokemon = listePokemons.get(pokeNum);
+		return p;
+    }
+    
+	public static void chooseCurrentPokemon() {
+	    Pokemon currentPokemon = choosePokemon(listePokemons);
 	}
 	
 	
-	public static void addPokemon() {
+	public static boolean addPokemon() {
+		boolean outOfRange = false;
+		if (listePokemons.size()<maxPokemons) {
+			listePokemons.add(choosePokemon(j.));
+		}else {
+			outOfRange = true;
+		}
+		return outOfRange;
 	}
 	
 	public static void start() {
-		
+		System.out.println("Recherche de ");
 	}
 	
 	public void lancerCombat() {
