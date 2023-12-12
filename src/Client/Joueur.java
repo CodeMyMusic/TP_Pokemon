@@ -41,8 +41,4 @@ public class Joueur {
     public Pokemon chooseRandomPokemon() {
     	return AllPokemons.lootbox();
     }
-    
-    public void combattre() {
-    	Combat combat = new Combat();   	
-    }
 }

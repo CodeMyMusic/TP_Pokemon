@@ -14,18 +14,19 @@ public class Combat {
 	private static ArrayList<Pokemon> listePokemons = new ArrayList<Pokemon>();
 	private Pokemon currentPokemon;
 	
-	public Combat() {
+	public Combat(Joueur j) {
+		this.j= j;
 	}
 	
     public static void main(String[] args) {
     	boolean outOfRange = false;
-    	while (listePokemons.size() < maxPokemons) {
-    		addPokemon();
+    	while (!outOfRange) {
+    		outOfRange = addPokemon();
     	}
     	System.out.println("Vous avez séléctionné 6 pokemons, vous êtes prêt pour affronter un autre joueur en ligne !");
     }
     
-    public static void choosePokemon(ArrayList<Pokemon> list) {
+    public static Pokemon choosePokemon(ArrayList<Pokemon> list) {
 		boolean valid = false;
 		int pokeNum;
 		Pokemon p;
@@ -33,17 +34,17 @@ public class Combat {
 		while (!valid) {
 			System.out.println("Choisisez un pokemon (numéro)");
 			for (int i =0; i<maxPokemons; i++) {
-				System.out.println(i + ""+listePokemons.get(i));
+				System.out.println(i + ""+list.get(i));
 			}
 			String input = scan.nextLine();
 			try {   	
 				pokeNum = Integer.parseInt(input);
+				p = list.get(pokeNum);
 			}
 			catch (NumberFormatException ex){
 				ex.printStackTrace();
 			}
 		}
-		Pokemon p =  
 		scan.close();
 		return p;
     }
@@ -56,7 +57,7 @@ public class Combat {
 	public static boolean addPokemon() {
 		boolean outOfRange = false;
 		if (listePokemons.size()<maxPokemons) {
-			listePokemons.add(choosePokemon(j.));
+			listePokemons.add(choosePokemon());
 		}else {
 			outOfRange = true;
 		}
