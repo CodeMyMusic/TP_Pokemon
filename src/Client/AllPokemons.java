@@ -1,5 +1,6 @@
 package Client;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class AllPokemons {
@@ -53,13 +54,13 @@ public class AllPokemons {
             new Pokemon("Pikachu", TypePokemon.ELECTRIQUE, 35, 55, true),
     };
     
-    public static Pokemon lootbox() {
-    	Pokemon 
-    	int pourcentageChance = rand.nextInt(ListePokemonAttrapables.length*2);
-    	if (pourcentageChance >= ListePokemonAttrapables.length) {
-    		
+    public static ArrayList<Pokemon> lootbox() {
+    	ArrayList<Pokemon> p = new ArrayList<Pokemon>();
+    	int multMalchance = 2;
+    	int prob = rand.nextInt(ListePokemonAttrapables.length*multMalchance);
+    	if (prob < ListePokemonAttrapables.length) {	
+    		p.add(ListePokemonAttrapables[prob]);
     	}
-    	Pokemon randomPokemon = ListePokemonAttrapables[pourcentageChance];
-    	return randomPokemon;
+    	return p;
     }
 }

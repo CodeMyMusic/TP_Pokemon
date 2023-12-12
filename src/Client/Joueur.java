@@ -38,7 +38,14 @@ public class Joueur {
         this.pseudo = pseudo;
     }
     
-    public Pokemon chooseRandomPokemon() {
-    	return AllPokemons.lootbox();
+    public void chooseRandomPokemon() {
+    	ArrayList<Pokemon> lstP = new ArrayList<>();
+    	if (lstP.size()>0) {
+    		Pokemon p = lstP.get(0);
+    		System.out.println("Félicitations ! Vous avez trouvé " + p.getNom());
+    		listePokemons.add(p);
+    	}else {
+    		System.out.println("Vous n'avez rien trouvé");
+    	}
     }
 }

@@ -3,7 +3,6 @@ package Client;
 import Client.AllPokemons.TypePokemon;
 
 public class Pokemon {
-
 	
     private int id;
     private String nom;
@@ -40,5 +39,9 @@ public class Pokemon {
 
     public Pokemon(String nom, int pv, int pc) {
         this(nom, TypePokemon.PLANTE, pv, pc, false);
+    }
+    
+    public String getNom() {
+    	return nom;
     }
 }
