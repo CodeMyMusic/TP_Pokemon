@@ -9,13 +9,14 @@ import java.util.Scanner;
 import Serveur.Joueur;
 
 public class Combat {
-	private Joueur j;
+	private static Joueur j;
 	private final static int maxPokemons = 6;
 	private static ArrayList<Pokemon> listePokemons = new ArrayList<Pokemon>();
-	private Pokemon currentPokemon;
+	private static Pokemon currentPokemon;
+
 	
-	public Combat(Joueur j) {
-		this.j= j;
+	public void setJoueur(Joueur j) {
+		Combat.j = j;
 	}
 	
     public static void main(String[] args) {
@@ -29,7 +30,7 @@ public class Combat {
     public static Pokemon choosePokemon(ArrayList<Pokemon> list) {
 		boolean valid = false;
 		int pokeNum;
-		Pokemon p;
+		Pokemon p = null;
 		Scanner scan = new Scanner(System.in);
 		while (!valid) {
 			System.out.println("Choisisez un pokemon (numéro)");
@@ -58,7 +59,7 @@ public class Combat {
 	public static boolean addPokemon() {
 		boolean outOfRange = false;
 		if (listePokemons.size()<maxPokemons) {
-			listePokemons.add(choosePokemon(j.));
+			listePokemons.add(choosePokemon(j.getListePokemons()));
 		}else {
 			outOfRange = true;
 		}
@@ -69,7 +70,7 @@ public class Combat {
 		System.out.println("Recherche de ");
 	}
 	
-	public void lancerCombat() {
+	public static void lancer() {
         Client c = new Client(listePokemons);
         c.run();
 	}

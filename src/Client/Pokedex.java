@@ -1,10 +1,7 @@
 package Client;
 
-import java.util.ArrayList;
-import java.util.Random;
 
-public class AllPokemons {
-	private static Random rand = new Random(); 
+public class Pokedex {
     // Enumération pour représenter les types de Pokémon
     public static enum TypePokemon {
         NORMAL, FEU, EAU, PLANTE, ELECTRIQUE, GLACE, COMBAT, POISON, SOL, VOL, PSY, INSECTE, ROCHE, SPECTRE, DRAGON
@@ -53,25 +50,4 @@ public class AllPokemons {
             new Pokemon("Abo", TypePokemon.POISON, 35, 60, true),
             new Pokemon("Pikachu", TypePokemon.ELECTRIQUE, 35, 55, true),
     };
-    
-    public static Pokemon lootbox() {
-    	int attrape = rand.nextInt(ListePokemonAttrapables.length);
-
-    	return ListePokemonAttrapables[attrape];
-    }
-    
-    public static String lootbox(Joueur j) {
-        String message = "";
-        int tirage = rand.nextInt(100);
-        if (tirage < 20) {
-        	message = "Pas de chance !";
-        } 
-        else {
-        	message = "Vous avez gagné un pokemon !";
-        	j.addPokemon(lootbox());
-        }
-        return message;
-    }
-    
-    
 }

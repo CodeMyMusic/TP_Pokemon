@@ -1,6 +1,6 @@
 package Client;
 
-import Client.AllPokemons.TypePokemon;
+import Client.Pokedex.TypePokemon;
 
 public class Pokemon {
 	
@@ -11,7 +11,52 @@ public class Pokemon {
     private int pc;
     private boolean base;
 
-    // Constructeurs
+    
+    public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public TypePokemon getType() {
+		return type;
+	}
+
+	public void setType(TypePokemon type) {
+		this.type = type;
+	}
+
+	public int getPv() {
+		return pv;
+	}
+
+	public void setPv(int pv) {
+		this.pv = pv;
+	}
+
+	public int getPc() {
+		return pc;
+	}
+
+	public void setPc(int pc) {
+		this.pc = pc;
+	}
+
+	public boolean isBase() {
+		return base;
+	}
+
+	public void setBase(boolean base) {
+		this.base = base;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	// Constructeurs
     public Pokemon(String nom, TypePokemon type, int pv, int pc, boolean base) {
         this.nom = nom;
         this.type = type;
