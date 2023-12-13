@@ -6,8 +6,6 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Serveur.Joueur;
-
 public class Combat {
 	private static Joueur j;
 	private final static int maxPokemons = 6;

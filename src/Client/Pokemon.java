@@ -10,7 +10,10 @@ public class Pokemon {
     private int pv;
     private int pc;
     private boolean base;
-
+    
+    public String getNom() {
+    	return nom;
+    }
     
     public int getId() {
 		return id;
@@ -86,7 +89,8 @@ public class Pokemon {
         this(nom, TypePokemon.PLANTE, pv, pc, false);
     }
     
-    public String getNom() {
-    	return nom;
+    @Override
+    public String toString() {
+    	return String.format("Pokemon %s :\ntype : %s", nom, type);  
     }
 }

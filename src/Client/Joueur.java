@@ -52,11 +52,17 @@ public class Joueur {
         this.pseudo = pseudo;
     }
     
-    public void removePokemon(Pokemon p) {
+    public String removePokemon(Pokemon p) {
+    	System.out.println(p);
+    	String pokName = p.getNom();
     	listePokemons.remove(p);
+    	return String.format("Pokémon %s supprimé", pokName);
     }
     
-    public void addPokemon(Pokemon p) {
+    public String addPokemon(Pokemon p) {
+    	System.out.println(p);
+    	String pokName = p.getNom();
     	listePokemons.add(p);
+    	return String.format("Pokémon %s ajouté", pokName);
     }
 }
