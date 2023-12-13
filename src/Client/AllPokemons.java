@@ -54,17 +54,23 @@ public class AllPokemons {
             new Pokemon("Pikachu", TypePokemon.ELECTRIQUE, 35, 55, true),
     };
     
+    public static Pokemon lootbox() {
+    	int attrape = rand.nextInt(ListePokemonAttrapables.length);
+
+    	return ListePokemonAttrapables[attrape];
+    }
+    
     public static String lootbox(Joueur j) {
-    	String res = "";
-    	int multMalchance = 2;
-    	int prob = rand.nextInt(ListePokemonAttrapables.length*multMalchance);
-    	if (prob < ListePokemonAttrapables.length) {	
-    		j.getListePokemons().add(ListePokemonAttrapables[prob]);
-    		res = "Vous avez trouvé un pokemon";
-    	}else {
-    		res = "Vous n'avez rien trouvé";
-    	}
-    	return res;
+        String message = "";
+        int tirage = rand.nextInt(100);
+        if (tirage < 20) {
+        	message = "Pas de chance !";
+        } 
+        else {
+        	message = "Vous avez gagné un pokemon !";
+        	j.addPokemon(lootbox());
+        }
+        return message;
     }
     
     

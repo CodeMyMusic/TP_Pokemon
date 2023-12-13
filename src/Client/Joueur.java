@@ -52,16 +52,11 @@ public class Joueur {
         this.pseudo = pseudo;
     }
     
+    public void removePokemon(Pokemon p) {
+    	listePokemons.remove(p);
+    }
     
-    
-    public void chooseRandomPokemon() {
-    	ArrayList<Pokemon> lstP = new ArrayList<>();
-    	if (lstP.size()>0) {
-    		Pokemon p = lstP.get(0);
-    		System.out.println("Félicitations ! Vous avez trouvé " + p.getNom());
-    		listePokemons.add(p);
-    	}else {
-    		System.out.println("Vous n'avez rien trouvé");
-    	}
+    public void addPokemon(Pokemon p) {
+    	listePokemons.add(p);
     }
 }
