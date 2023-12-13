@@ -12,8 +12,22 @@ public class Joueur {
     private String pseudo;
     private int nbPokemon;
 	private ArrayList<Pokemon> listePokemons = new ArrayList<Pokemon>();
+	
+	
 
-    // Tableau associatif qui permet de stocker des bonbons par type de pokemon
+    public ArrayList<Pokemon> getListePokemons() {
+		return listePokemons;
+	}
+
+
+
+	public void setListePokemons(ArrayList<Pokemon> listePokemons) {
+		this.listePokemons = listePokemons;
+	}
+
+
+
+	// Tableau associatif qui permet de stocker des bonbons par type de pokemon
     Map<String, Integer> ListeBonbons = new HashMap<String, Integer>();
     {
         ListeBonbons.put("Normal", 0);
@@ -37,6 +51,8 @@ public class Joueur {
     public Joueur(String pseudo) {
         this.pseudo = pseudo;
     }
+    
+    
     
     public void chooseRandomPokemon() {
     	ArrayList<Pokemon> lstP = new ArrayList<>();

@@ -33,7 +33,12 @@ public class Jeu {
 			String input = scan.nextLine();
 			try {   	
 				choice = Integer.parseInt(input);
-				switch (choice) {
+				if (choice >=0 && choice < 3) {
+					valid = true;
+					switch (choice) {
+					case 0:
+						
+					}
 					
 				}
 			}

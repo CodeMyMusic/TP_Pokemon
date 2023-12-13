@@ -39,6 +39,7 @@ public class Combat {
 			String input = scan.nextLine();
 			try {   	
 				pokeNum = Integer.parseInt(input);
+				valid = true;
 				p = list.get(pokeNum);
 			}
 			catch (NumberFormatException ex){
@@ -57,7 +58,7 @@ public class Combat {
 	public static boolean addPokemon() {
 		boolean outOfRange = false;
 		if (listePokemons.size()<maxPokemons) {
-			listePokemons.add(choosePokemon());
+			listePokemons.add(choosePokemon(j.));
 		}else {
 			outOfRange = true;
 		}
