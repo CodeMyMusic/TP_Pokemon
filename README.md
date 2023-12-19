@@ -1,6 +1,10 @@
 # Jeu Pokémon
 ## Descripition
-Attrapez des pokémons, faites les évoluer, jouez en 1v1 en arène contre un autre dresseur
-## Lancer le jeu
-📁UserInterface/Main.java
+Incarnez le dresseur Pokémon qui est en vous ! Attrapez des pokémons et faites les évoluer, améliorez-les grâce au système de bonbons. Jouez en 1v1 sur un serveur dédié.
+
+## Comment jouer
+Pour jouer, veuillez d'abord cloner ou télécharger le dépôt. Ensuite, il vous faudra un compilateur Java pour lancer le code.
+Le point d'entrée du code se situe dans le dossier 📁UserInterface/Main.java, vous devrez exécuter ce fichier.
+
+Le jeu est en ligne de commande, il n'y a pas d'interface.
 
