@@ -4,7 +4,7 @@ Incarnez le dresseur Pokémon qui est en vous ! Attrapez des pokémons et faites
 
 ## Comment jouer
 Pour jouer, veuillez d'abord cloner ou télécharger le dépôt. Ensuite, il vous faudra un compilateur Java pour lancer le code.
-Le point d'entrée du code se situe dans le dossier 📁UserInterface/Main.java, vous devrez exécuter ce fichier.
+Le point d'entrée du code se situe dans le dossier *TP_Pokemon\src\UserInterface\Main.java*, vous devrez exécuter ce fichier.
 
 Le jeu est en ligne de commande, il n'y a pas d'interface.
 
